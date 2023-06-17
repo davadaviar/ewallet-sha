@@ -107,9 +107,20 @@ class SignInPage extends StatelessWidget {
                     const SizedBox(
                       height: 30,
                     ),
-                    SizedBox(
+                    Container(
                       width: double.infinity,
                       height: 50,
+                      decoration: BoxDecoration(boxShadow: [
+                        BoxShadow(
+                          color: primaryColor,
+                          blurRadius: 150,
+                          spreadRadius: 0.5,
+                          offset: const Offset(
+                            0,
+                            0,
+                          ),
+                        )
+                      ]),
                       child: TextButton(
                         onPressed: () {},
                         style: TextButton.styleFrom(
