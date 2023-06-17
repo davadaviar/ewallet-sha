@@ -96,7 +96,69 @@ class _OnboardingPageState extends State<OnboardingPage> {
                   const SizedBox(
                     height: 50,
                   ),
-                  Row(
+                  currentIndex == 2 ?
+                  Column(
+                    children: [
+                      Container(
+                        width: double.infinity,
+                        height: 50,
+                        decoration: BoxDecoration(
+                          boxShadow: [
+                            BoxShadow(
+                              color: primaryColor,
+                              blurRadius: 150,
+                              spreadRadius: 1,
+                              offset: const Offset(
+                                0,
+                                0,
+                              ),
+                            )
+                          ]
+                        ),
+                        child: TextButton(
+                          onPressed: () {
+
+                          },
+                          style: TextButton.styleFrom(
+                            backgroundColor: primaryColor,
+                            shape: RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(50)
+                            )
+                          ),
+                          child: Text(
+                            'Get Started',
+                            style: whiteTextStyle.copyWith(
+                              fontSize: 16,
+                              fontWeight: semiBold,
+                            ),
+                          ),
+                        ),
+                      ),
+                      const SizedBox(
+                        height: 15,
+                      ),
+                      SizedBox(
+                        width: double.infinity,
+                        height: 50,
+                        child: TextButton(
+                          onPressed: () {
+
+                          },
+                          style: TextButton.styleFrom(
+                            padding: const EdgeInsets.symmetric(vertical: 10),
+                          ),
+                          child: Text(
+                            'Sign In',
+                            style: greyTextStyle.copyWith(
+                              fontSize: 16,
+
+                            ),
+                          ),
+                        ),
+                      )
+                    ],
+                  ) :
+                   Row(
                     children: [
                       Container(
                         margin: const EdgeInsets.only(right: 10),
