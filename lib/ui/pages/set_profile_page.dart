@@ -1,10 +1,10 @@
-import 'package:bank_sha/ui/widgets/buttons.dart';
-import 'package:bank_sha/ui/widgets/forms.dart';
 import 'package:flutter/material.dart';
 import '../../shared/theme.dart';
+import '../widgets/forms.dart';
+import '../widgets/buttons.dart';
 
-class SignUpPage extends StatelessWidget {
-  const SignUpPage({super.key});
+class SetProfilePage extends StatelessWidget {
+  const SetProfilePage({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -45,20 +45,35 @@ class SignUpPage extends StatelessWidget {
             ),
             child: Column(
               children: [
-                const CustomFormField(
-                  title: 'Full Name',
+                Container(
+                  width: 120,
+                  height: 120,
+                  decoration: BoxDecoration(
+                    color: backgroundLightColor,
+                    shape: BoxShape.circle,
+                  ),
+                  child: Center(
+                    child: Image.asset(
+                      'assets/ic_upload.png',
+                      width: 32,
+                    ),
+                  ),
                 ),
                 const SizedBox(
                   height: 16,
                 ),
-                const CustomFormField(
-                  title: 'Email Address',
+                Text(
+                  'Shayna Hanna',
+                  style: blackTextStyle.copyWith(
+                    fontSize: 18,
+                    fontWeight: semiBold,
+                  ),
                 ),
                 const SizedBox(
-                  height: 16,
+                  height: 30,
                 ),
                 const CustomFormField(
-                  title: 'Password',
+                  title: 'Set PIN (6 Digit Number)',
                   obscureText: true,
                 ),
                 const SizedBox(
@@ -67,20 +82,11 @@ class SignUpPage extends StatelessWidget {
                 CustomFilledButton(
                   title: 'Continue',
                   onPressed: () {
-                    Navigator.pushNamed(context, '/set-profile');
+                    Navigator.pushNamed(context, '/set-id-card');
                   },
                 ),
               ],
             ),
-          ),
-          const SizedBox(
-            height: 50,
-          ),
-          CustomTextButton(
-            title: 'Sign In',
-            onPressed: () {
-              Navigator.pushNamed(context, '/sign-in');
-            },
           ),
         ],
       ),
