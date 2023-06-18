@@ -1,4 +1,6 @@
 import 'package:bank_sha/shared/theme.dart';
+import 'package:bank_sha/ui/widgets/buttons.dart';
+import 'package:bank_sha/ui/widgets/forms.dart';
 import 'package:flutter/material.dart';
 
 class SignInPage extends StatelessWidget {
@@ -43,101 +45,36 @@ class SignInPage extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 // email input
-                Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Text(
-                      'Email Address',
-                      style: blackTextStyle.copyWith(
-                        fontSize: 14,
-                        fontWeight: medium,
-                      ),
-                    ),
-                    const SizedBox(
-                      height: 8,
-                    ),
-                    TextFormField(
-                      decoration: InputDecoration(
-                        border: OutlineInputBorder(
-                          borderRadius: BorderRadius.circular(14),
-                        ),
-                        contentPadding: const EdgeInsets.all(12),
-                      ),
-                    )
-                  ],
+                const CustomFormField(
+                  title: 'Email Address',
                 ),
                 const SizedBox(
                   height: 16,
                 ),
                 // password input
-                Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Text(
-                      'Password',
-                      style: blackTextStyle.copyWith(
-                        fontSize: 14,
-                        fontWeight: medium,
-                      ),
+                const CustomFormField(
+                  title: 'Password',
+                  obscureText: true,
+
+                ),
+                const SizedBox(
+                  height: 5,
+                ),
+                Align(
+                  alignment: Alignment.centerRight,
+                  child: TextButton(
+                    onPressed: () {},
+                    child: const Text(
+                      'Forgot Password?',
                     ),
-                    const SizedBox(
-                      height: 8,
-                    ),
-                    TextFormField(
-                      obscureText: true,
-                      decoration: InputDecoration(
-                        border: OutlineInputBorder(
-                          borderRadius: BorderRadius.circular(14),
-                        ),
-                        contentPadding: const EdgeInsets.all(12),
-                      ),
-                    ),
-                    const SizedBox(
-                      height: 5,
-                    ),
-                    Align(
-                      alignment: Alignment.centerRight,
-                      child: TextButton(
-                        onPressed: () {},
-                        child: const Text(
-                          'Forgot Password?',
-                        ),
-                      ),
-                    ),
-                    const SizedBox(
-                      height: 30,
-                    ),
-                    Container(
-                      width: double.infinity,
-                      height: 50,
-                      decoration: BoxDecoration(boxShadow: [
-                        BoxShadow(
-                          color: primaryColor,
-                          blurRadius: 150,
-                          spreadRadius: 0.5,
-                          offset: const Offset(
-                            0,
-                            0,
-                          ),
-                        )
-                      ]),
-                      child: TextButton(
-                        onPressed: () {},
-                        style: TextButton.styleFrom(
-                            backgroundColor: primaryColor,
-                            shape: RoundedRectangleBorder(
-                              borderRadius: BorderRadius.circular(50),
-                            )),
-                        child: Text(
-                          'Sign In',
-                          style: whiteTextStyle.copyWith(
-                            fontSize: 16,
-                            fontWeight: semiBold,
-                          ),
-                        ),
-                      ),
-                    ),
-                  ],
+                  ),
+                ),
+                const SizedBox(
+                  height: 30,
+                ),
+                CustomFilledButton(
+                  title: 'Sign In',
+                  onPressed: () {},
                 ),
               ],
             ),
@@ -145,19 +82,10 @@ class SignInPage extends StatelessWidget {
           const SizedBox(
             height: 50,
           ),
-          SizedBox(
-            width: double.infinity,
-            height: 50,
-            child: TextButton(
-              onPressed: () {},
-              child: Text(
-                'Create New Account',
-                style: greyTextStyle.copyWith(
-                  fontSize: 16,
-                ),
-              ),
-            ),
-          )
+          CustomTextButton(
+            title: 'Create New Account',
+            onPressed: () {},
+          ),
         ],
       ),
     );
