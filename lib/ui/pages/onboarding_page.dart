@@ -38,19 +38,19 @@ class _OnboardingPageState extends State<OnboardingPage> {
               items: [
                 Image.asset(
                   'assets/img_onboarding1.png',
-                  height: 331,
+                  height: 200,
                 ),
                 Image.asset(
                   'assets/img_onboarding2.png',
-                  height: 331,
+                  height: 200,
                 ),
                 Image.asset(
                   'assets/img_onboarding3.png',
-                  height: 331,
+                  height: 200,
                 )
               ],
               options: CarouselOptions(
-                height: 331,
+                height: 200,
                 viewportFraction: 1,
                 enableInfiniteScroll: false,
                 onPageChanged: (index, reason) {
@@ -62,7 +62,7 @@ class _OnboardingPageState extends State<OnboardingPage> {
               carouselController: carouselController,
             ),
             const SizedBox(
-              height: 80,
+              height: 50,
             ),
             Container(
               margin: const EdgeInsets.symmetric(
@@ -85,7 +85,7 @@ class _OnboardingPageState extends State<OnboardingPage> {
                     textAlign: TextAlign.center,
                   ),
                   const SizedBox(
-                    height: 26,
+                    height: 20,
                   ),
                   Text(
                     subtitles[currentIndex],
@@ -95,7 +95,7 @@ class _OnboardingPageState extends State<OnboardingPage> {
                     textAlign: TextAlign.center,
                   ),
                   const SizedBox(
-                    height: 50,
+                    height: 40,
                   ),
                   currentIndex == 2
                       ? Column(
